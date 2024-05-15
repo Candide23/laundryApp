@@ -1,12 +1,25 @@
+import React from 'react';
+import './App.css';  // Import global styles right after React import
+import Navbar from './Navbar';
+import HeroSection from './HeroSection';
+import FeaturesSection from './FeaturesSection';
+import Testimonials from './Testimonials';
+import Footer from './Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import './App.css';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-
+    <div>
+      <Navbar />
+      <HeroSection />
+      <FeaturesSection />
+      <Testimonials />
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
+
