@@ -1,5 +1,5 @@
 import React from 'react';
-import backgroundImage from './images/laundromat.jpg'; // Ensure the path is correct
+import backgroundImage from '../../images/laundromat.jpg'; // Ensure the path is correct
 
 const HeroSection = () => {
   return (

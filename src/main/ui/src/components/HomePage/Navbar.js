@@ -1,5 +1,6 @@
 import React from 'react';
-import logoImage from './images/your-logo.png'; // Ensure the path to your logo is correct
+import logoImage from '../../images/your-logo.png'; // Ensure the path to your logo is correct
+
 
 const Navbar = () => {
   return (

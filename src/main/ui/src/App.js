@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';  // Import global styles right after React import
-import Navbar from './Navbar';
-import HeroSection from './HeroSection';
+import Navbar from './components/HomePage/Navbar';
+import HeroSection from './components/HomePage/HeroSection';
 import FeaturesSection from './FeaturesSection';
-import Testimonials from './Testimonials';
-import Footer from './Footer';
+import Testimonials from './components/HomePage/Testimonials';
+import Footer from './components/HomePage/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
