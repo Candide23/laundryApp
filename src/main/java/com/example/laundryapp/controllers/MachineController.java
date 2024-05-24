@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/machine")
@@ -29,5 +31,11 @@ public class MachineController {
     public ResponseEntity<MachineDto> getMachineById(@PathVariable("id") Long machineId){
         MachineDto machineDto= machineService.getMachineById(machineId);
         return ResponseEntity.ok(machineDto);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<MachineDto>> getAllMachine(){
+        List<MachineDto> machines = machineService.getAllMachines();
+        return ResponseEntity.ok(machines);
     }
 }

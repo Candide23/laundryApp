@@ -9,6 +9,9 @@ import com.example.laundryapp.service.MachineService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @AllArgsConstructor
 public class MachineServiceImpl implements MachineService {
@@ -31,6 +34,14 @@ public class MachineServiceImpl implements MachineService {
                 () -> new ResourceNotFoundException("Machine is not exists with a given id: "  + machineId)
         );
         return MachineMapper.mapToMachineDto(machine);
+    }
+
+    @Override
+    public List<MachineDto> getAllMachines() {
+
+        List<Machine> machines = machineRepository.findAll();
+        return machines.stream().map((machine -> MachineMapper.mapToMachineDto(machine)))
+                .collect(Collectors.toList());
     }
 
 
