@@ -8,6 +8,6 @@ public interface MachineService {
 
     MachineDto createMachine(MachineDto machineDto);
     MachineDto getMachineById(Long machineId);
-
     List<MachineDto> getAllMachines();
+    MachineDto updateMachines(Long machineId, MachineDto updatedMachineDto);
 }

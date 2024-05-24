@@ -38,4 +38,13 @@ public class MachineController {
         List<MachineDto> machines = machineService.getAllMachines();
         return ResponseEntity.ok(machines);
     }
+
+    @PutMapping("{id}")
+    public ResponseEntity<MachineDto> updateMachine(@PathVariable("id") Long machineId,
+                                                      @RequestBody MachineDto updatedMachine){
+        MachineDto machineDto = machineService.updateMachines(machineId,updatedMachine );
+        return ResponseEntity.ok(machineDto);
+    }
+
+
 }

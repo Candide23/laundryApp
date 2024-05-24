@@ -44,5 +44,20 @@ public class MachineServiceImpl implements MachineService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public MachineDto updateMachines(Long machineId, MachineDto updatedMachineDto) {
+
+        Machine machine = machineRepository.findById(machineId).orElseThrow(
+                () -> new ResourceNotFoundException("Machine is not exists with given id: " + machineId)
+        );
+
+        machine.setType(updatedMachineDto.getType());
+        machine.setStatus(updatedMachineDto.getStatus());
+
+        Machine updateMachineObj = machineRepository.save(machine);
+
+        return  MachineMapper.mapToMachineDto(updateMachineObj);
+    }
+
 
 }
