@@ -2,6 +2,7 @@ package com.example.laundryapp.service.impl;
 
 import com.example.laundryapp.dto.MachineDto;
 import com.example.laundryapp.entity.Machine;
+import com.example.laundryapp.exception.ResourceNotFoundException;
 import com.example.laundryapp.mapper.MachineMapper;
 import com.example.laundryapp.repository.MachineRepository;
 import com.example.laundryapp.service.MachineService;
@@ -22,4 +23,15 @@ public class MachineServiceImpl implements MachineService {
 
         return MachineMapper.mapToMachineDto(saveMachine);
     }
+
+    @Override
+    public MachineDto getMachineById(Long machineId) {
+
+        Machine machine = machineRepository.findById(machineId).orElseThrow(
+                () -> new ResourceNotFoundException("Machine is not exists with a given id: "  + machineId)
+        );
+        return MachineMapper.mapToMachineDto(machine);
+    }
+
+
 }

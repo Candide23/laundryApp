@@ -5,4 +5,6 @@ import com.example.laundryapp.dto.MachineDto;
 public interface MachineService {
 
     MachineDto createMachine(MachineDto machineDto);
+
+    MachineDto getMachineById(Long machineId);
 }
