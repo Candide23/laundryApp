@@ -1,5 +1,6 @@
 import React from 'react';
 import backgroundImage from '../../images/laundromat.jpg'; // Ensure the path is correct
+import './HeroSection.css'; // Ensure this CSS file is imported for custom styles
 
 const HeroSection = () => {
   return (
@@ -23,5 +24,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
 

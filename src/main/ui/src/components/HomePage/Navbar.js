@@ -1,9 +1,10 @@
 import React from 'react';
 import logoImage from '../../images/your-logo.png'; // Ensure the path to your logo is correct
+import './Navbar.css'; // Ensure this CSS file is imported for custom styles
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <nav className="navbar navbar-expand-lg navbar-custom">
       <div className="container-fluid">
         <a className="navbar-brand" href="#home">
           <img src={logoImage} alt="LaundryApp Logo" style={{ height: '30px' }} />
@@ -34,6 +35,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
 
 
 

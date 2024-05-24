@@ -1,0 +1,66 @@
+/* Customizes the jumbotron to fit the full height of the viewport */
+.jumbotron {
+    height: 100vh;
+    color: white;
+    text-align: center;
+    background-size: cover; /* Ensure background covers the full jumbotron */
+    background-position: center;
+    background-color: #007bff; /* Match this color with your logo color */
+  }
+  
+  /* Customizing button styles in hero section */
+  .btn-primary {
+    background-color: #007bff; /* Standard Bootstrap primary color */
+    border-color: #007bff; /* Ensure consistent border color */
+  }
+  
+  .btn-primary:hover, .btn-primary:focus {
+    background-color: #0056b3; /* Darker on hover/focus for better interaction */
+    border-color: #004095;
+  }
+  
+  /* Hero section background with gradient overlay for better readability */
+  .hero-background {
+    position: relative;
+    color: white;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+  }
+  
+  .hero-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2; /* Ensures text appears above the overlay */
+    padding: 20px;
+  }
+  
+  /* Responsive typography adjustments */
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.5rem; /* Smaller font size for smaller devices */
+    }
+  
+    .hero-content p {
+      font-size: 1rem; /* Adjust paragraph font size for readability */
+    }
+  }
+  
+  /* Enhancing button visibility and interaction */
+  .btn-primary {
+    font-weight: bold;
+    padding: 12px 24px; /* Larger padding for easier interaction */
+    border-radius: 8px; /* Rounded borders for aesthetic appeal */
+  }
+  

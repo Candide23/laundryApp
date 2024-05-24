@@ -1,0 +1,31 @@
+/* Navbar customization */
+.navbar-custom {
+    background-color: #007bff; /* Match this color with your logo color */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Optional: adds a subtle border at the bottom for distinction */
+  }
+  
+  .navbar-custom .navbar-brand {
+    color: white; /* White text for the brand */
+  }
+  
+  .navbar-custom .navbar-brand img {
+    margin-right: 10px; /* Adds spacing between logo and text */
+  }
+  
+  .navbar-custom .navbar-nav .nav-link {
+    color: white; /* White links for better visibility */
+  }
+  
+  .navbar-custom .navbar-nav .nav-link:hover,
+  .navbar-custom .navbar-nav .nav-link:focus {
+    color: #d1ecf1; /* Lighter blue on hover/focus */
+  }
+  
+  .navbar-toggler {
+    border-color: white; /* White border color for the toggle button */
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* SVG icon color adjusted for visibility */
+  }
+  

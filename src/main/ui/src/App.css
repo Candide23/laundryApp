@@ -90,7 +90,7 @@ body, html {
 .hero-background {
   position: relative;
   color: white;
-  height: 100vh; /* Full viewport height */
+  height: 150vh; /* Full viewport height */
   display: flex;
   align-items: center; /* Center content vertically */
   justify-content: center; /* Center content horizontally */
