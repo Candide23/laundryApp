@@ -59,5 +59,16 @@ public class MachineServiceImpl implements MachineService {
         return  MachineMapper.mapToMachineDto(updateMachineObj);
     }
 
+    @Override
+    public void deletedMachine(Long machineId) {
+
+        Machine machine = machineRepository.findById(machineId).orElseThrow(
+                () -> new ResourceNotFoundException("Machine is not exists with given id: " + machineId)
+        );
+
+        machineRepository.deleteById(machineId);
+
+    }
+
 
 }

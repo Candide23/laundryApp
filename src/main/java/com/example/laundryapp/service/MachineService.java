@@ -10,4 +10,5 @@ public interface MachineService {
     MachineDto getMachineById(Long machineId);
     List<MachineDto> getAllMachines();
     MachineDto updateMachines(Long machineId, MachineDto updatedMachineDto);
+    void deletedMachine(Long machineId);
 }

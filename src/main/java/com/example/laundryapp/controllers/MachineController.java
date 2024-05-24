@@ -40,10 +40,16 @@ public class MachineController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<MachineDto> updateMachine(@PathVariable("id") Long machineId,
+    public ResponseEntity<MachineDto> updatedMachine(@PathVariable("id") Long machineId,
                                                       @RequestBody MachineDto updatedMachine){
         MachineDto machineDto = machineService.updateMachines(machineId,updatedMachine );
         return ResponseEntity.ok(machineDto);
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deletedMachine(@PathVariable("id") Long machineId){
+        machineService.deletedMachine(machineId);
+        return ResponseEntity.ok("Machine deleted successfully!.");
     }
 
 
