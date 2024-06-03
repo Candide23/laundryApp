@@ -1,13 +1,18 @@
 package com.example.laundryapp.service.impl;
 
+import com.example.laundryapp.dto.AddressDto;
 import com.example.laundryapp.dto.MachineDto;
+import com.example.laundryapp.entity.Address;
 import com.example.laundryapp.entity.Machine;
 import com.example.laundryapp.exception.ResourceNotFoundException;
+import com.example.laundryapp.mapper.AddressMapper;
 import com.example.laundryapp.mapper.MachineMapper;
+import com.example.laundryapp.repository.AddressRepository;
 import com.example.laundryapp.repository.MachineRepository;
 import com.example.laundryapp.repository.ReservationRepository;
 import com.example.laundryapp.service.MachineService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,17 +22,34 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class MachineServiceImpl implements MachineService {
 
+    @Autowired
     private MachineRepository machineRepository;
 
+    @Autowired
     private ReservationRepository reservationRepository;
+
+    @Autowired
+    private AddressRepository addressRepository;
 
 
     @Override
     public MachineDto createMachine(MachineDto machineDto) {
-        Machine machine = MachineMapper.mapToMachine(machineDto);
-        Machine saveMachine = machineRepository.save(machine);
 
-        return MachineMapper.mapToMachineDto(saveMachine);
+        AddressDto addressDto = machineDto.getAddress();
+        Address address = AddressMapper.mapToAddress(addressDto);
+
+        // Check if the address exists, if not create it
+        if (address.getId() == null || !addressRepository.existsById(address.getId())) {
+            address = addressRepository.save(address);
+        } else {
+            // Fetch the existing address from the database
+            address = addressRepository.findById(address.getId()).orElseThrow(() -> new RuntimeException("Address not found"));
+        }
+
+        Machine machine = MachineMapper.mapToMachine(machineDto);
+        machine.setAddress(address);
+        Machine savedMachine = machineRepository.save(machine);
+        return MachineMapper.mapToMachineDto(savedMachine);
     }
 
     @Override
@@ -74,8 +96,9 @@ public class MachineServiceImpl implements MachineService {
     }
 
     @Override
-    public List<MachineDto> getMachinesByAddress(String address) {
-        return machineRepository.findByAddress(address);
+    public List<MachineDto> getMachinesByAddress(Long addressId) {
+        return machineRepository.findByAddress_Id(addressId);
+
     }
 
 

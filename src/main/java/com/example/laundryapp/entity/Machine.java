@@ -24,8 +24,9 @@ public class Machine {
     @Column(nullable = false)
     private String status;
 
-    @Column(nullable = false)
-    private String address;
+    @ManyToOne
+    @JoinColumn(name = "address_id", nullable = false)
+    private Address address;
 
     @Column
     private Integer timeRemaining;

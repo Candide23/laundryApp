@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface MachineRepository extends JpaRepository<Machine, Long> {
-    List<MachineDto> findByAddress(String address);
+    List<MachineDto> findByAddress_Id(Long addressId);
 
 }

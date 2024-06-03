@@ -18,4 +18,6 @@ public class MachineDto {
     private Long id;
     private String type;
     private String status;
+    private AddressDto address;
+    private Integer timeRemaining;
 }
