@@ -5,6 +5,7 @@ import com.example.laundryapp.entity.Machine;
 import com.example.laundryapp.exception.ResourceNotFoundException;
 import com.example.laundryapp.mapper.MachineMapper;
 import com.example.laundryapp.repository.MachineRepository;
+import com.example.laundryapp.repository.ReservationRepository;
 import com.example.laundryapp.service.MachineService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,8 @@ import java.util.stream.Collectors;
 public class MachineServiceImpl implements MachineService {
 
     private MachineRepository machineRepository;
+
+    private ReservationRepository reservationRepository;
 
 
     @Override
@@ -68,6 +71,11 @@ public class MachineServiceImpl implements MachineService {
 
         machineRepository.deleteById(machineId);
 
+    }
+
+    @Override
+    public List<MachineDto> getMachinesByAddress(String address) {
+        return machineRepository.findByAddress(address);
     }
 
 
