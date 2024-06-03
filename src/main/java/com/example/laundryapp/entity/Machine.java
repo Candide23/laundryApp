@@ -23,4 +23,10 @@ public class Machine {
 
     @Column(nullable = false)
     private String status;
+
+    @Column(nullable = false)
+    private String address;
+
+    @Column
+    private Integer timeRemaining;
 }
