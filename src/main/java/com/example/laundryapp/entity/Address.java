@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 
 @Getter
 @Setter
@@ -30,4 +32,7 @@ public class Address {
 
     @Column(nullable = false)
     private String zipCode;
+
+    @OneToMany(mappedBy = "address", cascade = CascadeType.ALL)
+    private List<Machine> machines;
 }

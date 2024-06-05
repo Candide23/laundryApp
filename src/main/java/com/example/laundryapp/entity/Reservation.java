@@ -21,12 +21,15 @@ public class Reservation {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "machine_id", nullable = false)
+    private Machine machine;
+
+    @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @ManyToOne
-    @JoinColumn(name = "machine_id", nullable = false)
-    private Machine machine;
+    @Column(nullable = false)
+    private String code;
 
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)

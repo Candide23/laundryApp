@@ -9,12 +9,12 @@ import com.example.laundryapp.entity.User;
 
 public class MachineMapper {
 
-    public static Machine mapToMachine(MachineDto machineDto) {
+    public static Machine mapToMachine(MachineDto machineDto, Address address) {
         Machine machine = new Machine();
         machine.setId(machineDto.getId());
         machine.setType(machineDto.getType());
         machine.setStatus(machineDto.getStatus());
-        machine.setAddress(AddressMapper.mapToAddress(machineDto.getAddress()));
+        machine.setAddress(address);
         machine.setTimeRemaining(machineDto.getTimeRemaining());
         return machine;
     }
