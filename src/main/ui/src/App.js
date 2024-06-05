@@ -1,25 +1,22 @@
 import React from 'react';
-import './App.css';  // Import global styles right after React import
 import Navbar from './components/HomePage/Navbar';
 import HeroSection from './components/HomePage/HeroSection';
-import FeaturesSection from './FeaturesSection';
-import Testimonials from './components/HomePage/Testimonials';
+import FeaturesSection from './components/HomePage/FeaturesSection';
 import Footer from './components/HomePage/Footer';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import MachineForm from './components/Machine/MachineForm';
+import './App.css';
 
-
-
-const App = () => {
+function App() {
   return (
-    <div>
+    <div className="App">
       <Navbar />
       <HeroSection />
       <FeaturesSection />
-      <Testimonials />
+      <MachineForm />
       <Footer />
     </div>
   );
-};
+}
 
 export default App;
 

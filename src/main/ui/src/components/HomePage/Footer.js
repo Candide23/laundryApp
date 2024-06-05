@@ -1,12 +1,18 @@
 import React from 'react';
+import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-white text-center py-3">
-      <p>© 2024 LaundryApp, Inc. All rights reserved.</p>
+    <footer className="footer">
+      <p>&copy; 2023 LaundryApp. All rights reserved.</p>
+      <div className="footer-links">
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms of Use</a>
+      </div>
     </footer>
   );
 };
 
 export default Footer;
+
 
