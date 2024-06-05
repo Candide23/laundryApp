@@ -5,10 +5,12 @@ import FeaturesSection from './components/HomePage/FeaturesSection';
 import Footer from './components/HomePage/Footer';
 import MachineForm from './components/Machine/MachineForm';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
-    <div className="App">
+    <div >
       <Navbar />
       <HeroSection />
       <FeaturesSection />
